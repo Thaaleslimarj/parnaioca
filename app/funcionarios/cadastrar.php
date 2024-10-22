@@ -1,18 +1,6 @@
 <?php  
+include '../config/conn.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {  
-    // Conectar ao banco de dados (substitua os valores conforme necessário)  
-    $host = "localhost"; // ou seu host  
-    $usuario = "usuario"; // seu usuário do banco  
-    $senha = "senha"; // sua senha do banco  
-    $banco = "nome_do_banco"; // nome do banco  
-
-    // Cria a conexão  
-    $conn = new mysqli($host, $usuario, $senha, $banco);  
-
-    // Verifica a conexão  
-    if ($conn->connect_error) {  
-        die("Conexão falhou: " . $conn->connect_error);  
-    }  
 
     // Captura os dados do formulário  
     $nome = $_POST['nome'];  

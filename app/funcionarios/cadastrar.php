@@ -1,29 +1,41 @@
-<?php  
-include '../config/conn.php';
-if ($_SERVER["REQUEST_METHOD"] == "POST") {  
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    // Captura os dados do formulário  
-    $nome = $_POST['nome'];  
-    $data_nascimento = $_POST['data_nascimento'];  
-    $cpf = $_POST['cpf'];  
-    $email = $_POST['email'];  
-    $telefone = $_POST['telefone'];  
-    $estado = $_POST['estado'];  
-    $cidade = $_POST['cidade'];  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravar formulario</title>
+</head>
 
-    // Criação da query para inserir os dados  
-    $sql = "INSERT INTO clientes (nome, data_nascimento, cpf, email, telefone, estado, cidade)  
-            VALUES ('$nome', '$data_nascimento', '$cpf', '$email', '$telefone', '$estado', '$cidade')";  
+<body>
 
-    if ($conn->query($sql) === TRUE) {  
-        echo "Cadastro realizado com sucesso!";  
-    } else {  
-        echo "Erro: " . $sql . "<br>" . $conn->error;  
-    }  
+    <h3>Cadastro de Funcionario</h3>
 
-    // Fecha a conexão  
-    $conn->close();  
-} else {  
-    echo "Método de requisição inválido.";  
-}  
-?>
+    <form action="gFuncionarios.php" method="post" name="fcadastro">
+
+        Nome:<br />
+        <input type="text" name="nome" /><br />
+
+        Login:<br />
+        <input type="text" name="Login" /><br />
+
+        Senha:<br />
+        <input type="text" name="Senha" /><br />
+
+        Tipo:<br />
+        <input type="text" name="Tipo" /><br />
+
+        Status:<br />
+        <input type="text" name="status" /><br />
+
+        <input type="submit" value="Enviar" />
+
+    </form>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

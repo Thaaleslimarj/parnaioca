@@ -7,17 +7,17 @@
 </head>
 <body>
     <h1>Bem vindo ao Parnaioca:</h1>
-    <form action="" method="post">
+    <form action="./include/validarLogin.php" method="POST">
         <p>
-            <label>E-mail</label>
-            <input type="text" name="email">
+            <label>Login</label>
+            <input type="text" name="login">
         </p>     
         <p>
             <label>Senha</label>
             <input type="text" name="senha">
         </p>  
         <p>
-            <button type="button">Entrar</button>
+            <button>Entrar</button>
         </p>  
     </form>
 </body>

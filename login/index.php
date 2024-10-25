@@ -2,11 +2,14 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
 <body>
-    <h1>Bem vindo ao Parnaioca:</h1>
+    <h3>Bem vindo ao Parnaioca:</h3>
+
+    <!-- AQUI INCLUI O INDEX NO VALIDAR LOGIN NO METODO POST (CRIA INFORMAÇÃO)  -->
     <form action="./include/validarLogin.php" method="POST">
         <p>
             <label>Login</label>

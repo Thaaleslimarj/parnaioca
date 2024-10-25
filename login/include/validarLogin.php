@@ -10,7 +10,7 @@
         $senha = $_POST['senha'];
 
         // Prepara a consulta SQL para verificar se há um funcionário com o login e senha fornecidos
-        $query = "SELECT * FROM funcionario WHERE login = '$login' AND senha = '$senha'";
+        $query = "SELECT login, senha FROM funcionario WHERE login = '$login' AND senha = '$senha'";
         
         // Executa a consulta no banco de dados
         $executaConsulta = mysqli_query($conn, $query);

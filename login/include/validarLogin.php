@@ -1,36 +1,40 @@
 <?php
-// PEGAR DADOS DO FORMULARIO \/
-$login = $_POST['login'];
-$senha = $_POST['senha'];
-// PEGAR DADOS DO FORMULARIO /\
 
-// CONECTAR COM O BANCO DE DADOS \/
-$hostBD = 'localhost';
-$usuarioBD = 'root';
-$senhaBD = '';
-$schemaBD = 'parnaioca';
-$conexaoBD = mysqli_connect($hostBD, $usuarioBD, $senhaBD, $schemaBD);
-// CONECTAR COM O BANCO DE DADOS /\
+    // Inclui o arquivo de configuração que contém a conexão com o banco de dados
+    include '../../app/config/conn.php';
 
-// BUSCAR DADOS DO BANCO DE DADOS \/
-$consulta = "SELECT senha FROM funcionario 
-                WHERE login = '$login'"; // where = BUSCAR DE ACORDO COM O LOGIN DO FORMULARIO
+    // Verifica se os campos de login e senha não estão vazios
+    if ((!empty($_POST['login'])) && (!empty($_POST['senha']))) {
+        // Armazena os dados de login e senha enviados via POST
+        $login = $_POST['login'];
+        $senha = $_POST['senha'];
 
-// EXECUTAR A CONSULTA DO BANCO DE DADOS \/
-$executaConsulta = mysqli_query($conexaoBD, $consulta);
+        // Prepara a consulta SQL para verificar se há um funcionário com o login e senha fornecidos
+        $query = "SELECT * FROM funcionario WHERE login = '$login' AND senha = '$senha'";
+        
+        // Executa a consulta no banco de dados
+        $executaConsulta = mysqli_query($conn, $query);
+        $arrayDados = mysqli_fetch_assoc($executaConsulta);
+        $loginBanco = $arrayDados['login'];
+        
+        // Conta o número de linhas retornadas pela consulta
+        $numeroLinha = mysqli_num_rows($executaConsulta);
 
-// RETORNAR OS DADOS DO BANCO DE DADOS \/
-$dadosRetornadosConsulta = mysqli_fetch_array($executaConsulta);
+        // Verifica se não foi encontrado nenhum funcionário com as credenciais fornecidas
+        if ($numeroLinha == 0) { 
+            // Redireciona para a página de login se as credenciais estiverem incorretas
+            header('location: ../index.php');
+            die(); // Encerra o script após o redirecionamento
+        }
 
-// SALVA O VALOR DA SENHA DO BANCO DE DADOS EM UMA VARIAVEL
-$senhaBanco = $dadosRetornadosConsulta['senha'];
+        session_start();
+        $_SESSION['usuario_logado'] = $loginBanco;
 
-// VALIDAR SE A SENHA DO BANCO DE DADOS É IGUAL AO DO FORMULARIO
-if($senha == $senhaBanco){
-    //CASO SENHA CORRETA SALVAR NA SESSION;
-    session_start();
-    $_SESSION['usuario_logado'] = $login;
-    header("Location: ../../app");
-} else {
-    header("Location: ../index.php?erro=Senha incorreta");
-}
+        // Se as credenciais estiverem corretas, redireciona para a página de funcionários
+        header('location: ../../app/funcionarios/index.php');
+
+    } else {
+        // Exibe uma mensagem de erro se os campos não forem preenchidos
+        echo 'Deve enviar todos os dados!';
+    }
+?>

@@ -10,5 +10,7 @@
     // Verifica a conexão  
     if ($conn->connect_error) {  
         die("Conexão falhou: " . $conn->connect_error);  
-    }  
+    }  else {
+        // echo 'conexao estabelecida com sucesso!!';
+    }
 ?>

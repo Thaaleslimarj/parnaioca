@@ -5,12 +5,11 @@
     $banco = "parnaioca"; // nome do banco  
 
     // Cria a conexão  
-    $conn = new mysqli($host, $usuario, $senha, $banco);  
+    // $conn = new mysqli($host, $usuario, $senha, $banco);  
+    $conn = mysqli_connect($host, $usuario, $senha, $banco);  
 
     // Verifica a conexão  
-    if ($conn->connect_error) {  
-        die("Conexão falhou: " . $conn->connect_error);  
-    }  else {
-        // echo 'conexao estabelecida com sucesso!!';
-    }
+    if (!$conn) {  
+        die("Conexão falhou");  
+    } 
 ?>

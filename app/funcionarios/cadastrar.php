@@ -1,41 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html>  
+<html lang="pt-br">  
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gravar formulario</title>
-</head>
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Cadastro de Funcionário</title>  
+</head>  
 
-<body>
+<body>  
 
-    <h3>Cadastro de Funcionario</h3>
+    <h3>Cadastro de Funcionário</h3>  
+    <form action="./include/gravarFuncionario.php" method="post" name="cadastro">  
 
-    <form action="gFuncionarios.php" method="post" name="fcadastro">
+        Nome:<br />  
+        <input type="text" name="nome" required /><br />  
 
-        Nome:<br />
-        <input type="text" name="nome" /><br />
+        Login:<br />  
+        <input type="text" name="login" required /><br />  
 
-        Login:<br />
-        <input type="text" name="Login" /><br />
+        Senha:<br />  
+        <input type="password" name="senha" required /><br />  
 
-        Senha:<br />
-        <input type="text" name="Senha" /><br />
+        Tipo:<br />  
+        <input type="text" name="tipo" required /><br />  
 
-        Tipo:<br />
-        <input type="text" name="Tipo" /><br />
+        Status:<br />  
+        <input type="text" name="status" required /><br />  
 
-        Status:<br />
-        <input type="text" name="status" /><br />
+        <input type="submit" value="Enviar" />  
 
-        <input type="submit" value="Enviar" />
+    </form>  
 
-    </form>
-
-</body>
-
-</html>
-
-</body>
+</body>  
 
 </html>

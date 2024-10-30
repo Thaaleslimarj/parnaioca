@@ -20,10 +20,17 @@
 
         Senha:<br />  
         <input type="password" name="senha" required /><br />  
-
+<!-- 
         Tipo:<br />  
-        <input type="text" name="tipo" required /><br />  
+        <input type="text" name="tipo" required /><br />   -->
 
+        Tipo: <br>
+        <select name="tipo" id="tipo">
+            <option value="usuario">Usuário</option>
+            <option value="admin">Administrador</option>
+        </select>
+        <br>
+        
         Status:<br />  
         <input type="text" name="status" required /><br />  
 
@@ -34,3 +41,5 @@
 </body>  
 
 </html>
+
+<a href="index.php">Página Inicial</a>

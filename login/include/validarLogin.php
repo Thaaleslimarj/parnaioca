@@ -8,31 +8,39 @@
         // Armazena os dados de login e senha enviados via POST
         $login = $_POST['login'];
         $senha = $_POST['senha'];
+        
+        // consultando no banco o funcionario correspondente ao login
+        $sql = "SELECT * FROM funcionario WHERE login = '$login'";
+        $executaConsulta = mysqli_query($conn, $sql);
+        $array = mysqli_fetch_assoc($executaConsulta);
 
-        // Prepara a consulta SQL para verificar se há um funcionário com o login e senha fornecidos
-        $query = "SELECT login, senha FROM funcionario WHERE login = '$login' AND senha = '$senha'";
-        
-        // Executa a consulta no banco de dados
-        $executaConsulta = mysqli_query($conn, $query);
-        $arrayDados = mysqli_fetch_assoc($executaConsulta);
-        $loginBanco = $arrayDados['login'];
-        
-        // Conta o número de linhas retornadas pela consulta
+        // verificando o numero de linhas encontradas.
         $numeroLinha = mysqli_num_rows($executaConsulta);
 
         // Verifica se não foi encontrado nenhum funcionário com as credenciais fornecidas
         if ($numeroLinha == 0) { 
-            // Redireciona para a página de login se as credenciais estiverem incorretas
+            // Redireciona para a página de login se login de funcionario não encontrado
             header('location: ../index.php');
             die(); // Encerra o script após o redirecionamento
         }
 
-        session_start();
-        $_SESSION['usuario_logado'] = $loginBanco;
+        $senhaBanco = $array['senha'];
 
-        // Se as credenciais estiverem corretas, redireciona para a página de funcionários
-        header('location: ../../app/funcionarios/index.php');
+        // verificar se senha que usuario digitou corresponde a senha do banco como hash
+        if (password_verify($senha, $senhaBanco)) {
+            $loginBanco = $array['login'];
 
+            session_start();
+            $_SESSION['usuario_logado'] = $loginBanco;
+            
+            // Se as credenciais estiverem corretas, redireciona para a página de funcionários
+            header('location: ../../app/funcionarios/index.php');
+            
+        } else {
+            header('location: ../index.php?msgInvalida=Senha incorreta.');
+            die();
+        }
+        
     } else {
         // Exibe uma mensagem de erro se os campos não forem preenchidos
         echo 'Deve enviar todos os dados!';

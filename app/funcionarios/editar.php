@@ -7,9 +7,8 @@
     <body>
        
        <?php
-        include_once './cadastrar.php';
+        include_once '../config/conn.php';
         $id = $_GET["id"];
-        include_once './cadastrar.php';
 
         $sql = "select * from funcionario where id = " . $id;
         $result = mysqli_query($conn, $sql);
@@ -45,3 +44,6 @@
 
     </body>
 </html>
+
+<br/>
+<a href="index.php">Página Inicial</a>

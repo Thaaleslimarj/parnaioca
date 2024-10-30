@@ -11,16 +11,28 @@
     <!-- AQUI INCLUI O INDEX NO VALIDAR LOGIN NO METODO POST (CRIA INFORMAÇÃO)  -->
     <form action="./include/validarLogin.php" method="POST">
         <p>
-            <label>Login</label>
-            <input type="text" name="login">
+            <label for="login">Login</label>
+            <input type="text" name="login" id="login">
         </p>     
         <p>
-            <label>Senha</label>
-            <input type="text" name="senha">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha">
         </p>  
         <p>
             <button>Entrar</button>
         </p>  
+        <?php
+
+            if (isset($_GET['msgInvalida'])) {
+                $mensagemInvalida = $_GET['msgInvalida']; 
+
+                ?>
+                    <p style="color:red"><?php echo $mensagemInvalida ?></p>
+                <?php
+
+            }
+
+        ?>
     </form>
 </body>
 </html>

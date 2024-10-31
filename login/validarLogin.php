@@ -1,7 +1,7 @@
 <?php
 
     // Inclui o arquivo de configuração que contém a conexão com o banco de dados
-    include '../../app/config/conn.php';
+    include '../app/config/conn.php';
 
     // Verifica se os campos de login e senha não estão vazios
     if ((!empty($_POST['login'])) && (!empty($_POST['senha']))) {
@@ -34,7 +34,7 @@
             $_SESSION['usuario_logado'] = $loginBanco;
             
             // Se as credenciais estiverem corretas, redireciona para a página de funcionários
-            header('location: ../../app/funcionarios/index.php');
+            header('location: ../../app/index.php');
             
         } else {
             header('location: ../index.php?msgInvalida=Senha incorreta.');

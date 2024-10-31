@@ -14,10 +14,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Regra de email funcional, verifica cada etapa de construção do email
     $regraemail = "/^[a-zA-Z0-9.-_]+@[a-zA-Z0-9-]+\.[a-zA-Z.]+$/";
 
+    $regranome = "/^[a-z A-ZçÇà-üÀ-ÜñÑ]{3,50}$/";
+
+    
+
     // Marcador de erro nas validações
     $flag = 0;
     // Mensagem exibida de erro
     $msg = "";
+    
+    if (!preg_match($regranome, $nome)){
+        $flag = 1;
+        $msg = $msg. "preencha o nome corretamente";
+
+    } 
 
     // Verificação de consistencia na construção de email
     if(!preg_match($regraemail, $email)){

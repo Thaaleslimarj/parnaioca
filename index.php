@@ -9,7 +9,7 @@
     <h3>Bem vindo ao Parnaioca:</h3>
 
     <!-- AQUI INCLUI O INDEX NO VALIDAR LOGIN NO METODO POST (CRIA INFORMAÇÃO)  -->
-    <form action="./include/validarLogin.php" method="POST">
+    <form action="/login/validarLogin.php" method="POST">
         <p>
             <label for="login">Login</label>
             <input type="text" name="login" id="login">

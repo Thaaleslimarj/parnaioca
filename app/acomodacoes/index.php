@@ -8,14 +8,14 @@ include '../config/conn.php';
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
-    <title>consultar funcionário</title>
+    <title>Consultar Acomodação</title>
 
     <script>
 
-            function excluir(mat) {
+            function excluir(id) {
 
                 if (confirm('Deseja realmente excluir ?')) {
-                    location.href = 'include/excluirFuncionario.php?id=' +  mat ;
+                    location.href = 'include/excluirAcomodacao.php?id=' +  id ;
                 }
 
             }
@@ -25,7 +25,7 @@ include '../config/conn.php';
 
 <body>
 
-    <h3>Consultar funcionário</h3>
+    <h3>Consultar Acomodação</h3>
 
     <form action="index.php" method="get">
 
@@ -47,7 +47,7 @@ include '../config/conn.php';
 
         $nome = $_GET["nome"];
 
-        $sql = "select * from funcionario where nome like '" . $nome . "%' ";
+        $sql = "select * from acomodacoes where nome like '" . $nome . "%' ";
 
         $result = mysqli_query($conn, $sql);
         $totalregistros = mysqli_num_rows($result); //numero de linhas do resultado
@@ -59,11 +59,10 @@ include '../config/conn.php';
                        <tr>
                             <th>Id</th>
                             <th>Nome</th>
-                            <th>Login</th>
-                            <th>Tipo</th>
-                            <th>Status</th>
-                            <th>Editar</th>
-                            <th>Excluir</th>
+                            <th>valor</th>
+                            <th>capacidade</th>
+                            <th>tipo</th>
+                            <th>status</th>
                        </tr>";
             // enquanto houverem resultados o codigo continuara buscando informações;;    
             while ($row = mysqli_fetch_array($result)) {
@@ -72,7 +71,8 @@ include '../config/conn.php';
                 <tr>
                 <td><?php echo $row["id"] ?> </td>
                 <td><?php echo $row["nome"] ?></td>
-                <td><?php echo $row["login"] ?></td>
+                <td><?php echo $row["valor"] ?></td>
+                <td><?php echo $row["capacidade"] ?></td>
                 <td><?php echo $row["tipo"] ?></td>
                 <td><?php echo $row["status"] ?></td>
                 <td><a href="editar.php?id=<?php echo $row["id"] ?>">...</a></td>
@@ -84,14 +84,14 @@ include '../config/conn.php';
             echo "</table>";
             echo "Total de registros: $totalregistros";
         } else {
-            echo "Nenhum cliente cadastrado";
+            echo "Nenhuma acomodacao cadastrada";
         }
     }
     ?>
     <br>
-    <a href="cadastrar.php"> Cadastrar funcionario </a>
+    <a href="cadastrar.php"> Cadastrar Acomodação </a>
     <br>
-    <a href="../../index.php">Página Inicial</a>
+    <a href="../index.php">Página Inicial</a>
 </body>
 
 </html>

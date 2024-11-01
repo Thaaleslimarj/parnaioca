@@ -29,6 +29,7 @@ if (mysqli_query($conn, $sql)) {
 // Fecha a conexão  
 mysqli_close($conn);  
 ?>    
+<p><a href="javascript:history.go(-1)">Voltar para a página anterior</a></p>
 
 
 <!-- --------------------------------------------------------------------------------

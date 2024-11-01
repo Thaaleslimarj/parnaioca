@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $regranome = "/^[a-z A-ZçÇà-üÀ-ÜñÑ]{3,50}$/";
 
-    
 
     // Marcador de erro nas validações
     $flag = 0;
@@ -36,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Mensagem exibida explicando o erro
         $msg = "Preencha o email corretamente";
     }
+    
 
     //  Verifica se após as validações o marcador continua zero, se continuar executara o codigo a seguir
     if($flag ==0){
@@ -52,3 +52,7 @@ if ($conn->query($sql) === TRUE) {
     $conn->close();  
   }
 ?>
+<br>
+
+
+<p><a href="javascript:history.go(-1)">Voltar para a página anterior</a></p>

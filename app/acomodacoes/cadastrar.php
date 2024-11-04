@@ -21,17 +21,15 @@ include '../config/conn.php';
         <input type="number" id="capacidade" name="capacidade" required><br><br>  
 
         <label for="tipo">Tipo de Acomodação:</label>  
-        <select id="tipo" name="tipo" required>  
-            <option value="quarto">Quarto</option>  
-            <option value="suite">Suíte</option>  
-            <option value="chalé">Chalé</option>  
+        <select id="tipo" name="tipo" required>    
+            <option value="suite">Suíte</option>    
             <option value="apartamento">Apartamento</option>  
         </select><br><br>  
 
         <label for="status">Status:</label>  
         <select id="status" name="status" required>  
-            <option value="disponivel">Disponível</option>  
-            <option value="indisponivel">Indisponível</option>  
+            <option value="ativo">Ativo</option>  
+            <option value="inativo">Inativo</option>  
         </select><br><br>  
 
         <input type="submit" value="Cadastrar">  

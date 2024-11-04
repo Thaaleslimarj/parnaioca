@@ -53,3 +53,22 @@ valor decimal(10,2)
 
 ALTER TABLE itens_frigobar ADD FOREIGN KEY(idprodutos) REFERENCES estoque (id);
 
+
+-- -- INSERE DADOS NA TABELA
+-- INSERT INTO funcionario ( nome, login, senha, tipo, status 
+-- 			)VALUES ( 'Vitor', 'vitor', '123', 'usuario', 'ativo');
+            
+-- INSERT INTO funcionario ( nome, login, senha, tipo, status ) VALUES ( 'Thales', 'thales', '123', 'admin', 'ativo');
+
+
+-- -- BUSCA TODOS OS DADOS DA TABELA
+-- SELECT * FROM funcionario;
+-- -- BUSCA DADOS SELECIONADOS DA TABELA
+-- SELECT login, senha FROM funcionario;
+
+-- -- BUSCA DADOS SELECIONADOS DA TABELA COM PARAMETRIZAÇÃO
+-- SELECT login, senha FROM funcionario WHERE login = 'thales' and senha = '1234';
+
+
+
+

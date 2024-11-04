@@ -1,9 +1,9 @@
 <?php
 $id = $_GET["id"];
 
-include_once '../../config/conn.php';
+include_once '../../../app/config/conn.php';
 
-    $sql = "delete from funcionario where id=" . $id;
+    $sql = "delete from acomodacoes where id=" . $id;
 
         if (mysqli_query($conn, $sql)) {
         echo "Deletado com sucesso!";  
@@ -14,4 +14,4 @@ include_once '../../config/conn.php';
 ?>
 
 <br/>
-<p><a href="javascript:history.go(-1)">Voltar para a página anterior</a></p>
+<a href="../../index.php">Página Inicial</a>

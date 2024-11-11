@@ -10,4 +10,6 @@ session_start()
 
 <a href="./acomodacoes/index.php">Acomodações</a><br/>
 
+<a href="./frigobar/index.php">Frigobar</a><br/>
+
 <p><a href="javascript:history.go(-1)">Voltar para a página anterior</a></p>

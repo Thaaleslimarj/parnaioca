@@ -4,7 +4,7 @@ acomodacao int,
 nome varchar(255),
 valor decimal(10,2),
 capacidade int,
-manuntencao date,
+manutencao date,
 status enum('ativo','inativo')
 )
 

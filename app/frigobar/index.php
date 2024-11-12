@@ -54,7 +54,7 @@ include '../config/conn.php';
                             <th>Nome</th>  
                             <th>valor</th>  
                             <th>capacidade</th>  
-                            <th>manuntenção</th>    
+                            <th>manutencao</th>    
                             <th>status</th>    
                        </tr>";  
 
@@ -66,7 +66,7 @@ include '../config/conn.php';
                 <td><?php echo $row["nome"] ?></td>  
                 <td><?php echo $row["valor"] ?></td>  
                 <td><?php echo $row["capacidade"] ?></td>  
-                <td><?php echo $row["manuntencao"] ?></td>    
+                <td><?php echo $row["manutencao"] ?></td>    
                 <td><?php echo $row["status"] ?></td>    
                 <td><a href="editar.php?id=<?php echo $row["id"] ?>">Editar</a></td>  
                 <td><a href="#" onclick="excluir(<?php echo $row["id"] ?>)">Excluir</a></td>  

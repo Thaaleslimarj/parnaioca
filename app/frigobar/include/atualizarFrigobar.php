@@ -1,7 +1,7 @@
 <?php  
 include '../../config/conn.php';
 
-// Dados do funcionário a serem atualizados  
+// Dados do frigobar a serem atualizados  
 $id = $_POST ['id'];
 $idacomodacao = $_POST['idacomodacao']; 
 $nome = $_POST['nome']; 
@@ -12,7 +12,6 @@ $status = $_POST['status'];
 
 // SQL para atualização  
 $sql = "update frigobar set 
-            id = '$id',
             idacomodacao = '$idacomodacao',
             nome = '$nome',
             valor = '$valor',

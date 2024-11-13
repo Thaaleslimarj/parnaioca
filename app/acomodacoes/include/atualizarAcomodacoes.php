@@ -7,6 +7,8 @@ $valor = $_POST['valor'];
 $valor = $_POST['valor']; 
 $tipo = $_POST['tipo']; 
 $status = $_POST['status']; 
+$id = $_POST['id'];
+$capacidade = $_POST['capacidade'];
 
 // SQL para atualização  
 $sql = "update acomodacoes set 
@@ -24,4 +26,4 @@ mysqli_close($conn);
 ?>
 
 <br/>
-<a href="index.php">Página Inicial</a
+<a href="/app/index.php">Página Inicial</a

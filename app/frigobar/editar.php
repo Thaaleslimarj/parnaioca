@@ -18,14 +18,17 @@
                 
         <h3>Editar frigobar</h3>
 
-        <form action="cadastrarFrigobar.php" method="post">            
+        <form action="./include/atualizarFrigobar.php" method="post">            
 
 
             <input type="hidden" readonly="true" name="id" value="<?php echo $row["id"] ?>"/>
 
             Nome:<Br/>
             <input type="text" name="nome" value="<?php echo $row["nome"] ?>"/><br/>
-
+            
+            Idacomodação:<Br/>
+            <input type="number" name="idacomodacao" value="<?php echo $row["nome"] ?>"/><br/>
+            
             Valor:<Br/>
             <input type="text" name="valor" value="<?php echo $row["valor"] ?>"/><br/>
 

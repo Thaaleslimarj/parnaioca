@@ -18,7 +18,7 @@
                 
         <h3>Editar funcionário</h3>
 
-        <form action="cadastrar.php" method="post">            
+        <form action="include/atualizarFuncionario.php" method="post">            
 
 
             <input type="hidden" readonly="true" name="id" value="<?php echo $row["id"] ?>"/>

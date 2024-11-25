@@ -17,7 +17,7 @@ $status = mysqli_real_escape_string($conn, $_POST['status']);
 $senhaHash = password_hash($senha, PASSWORD_DEFAULT);  
 
 // SQL para inserir os dados no banco  
-$sql = "INSERT INTO funcionario (nome, login, senha, tipo, status) VALUES ('$nome', '$login', '$senhaHash', '$tipo', '$status')";  
+$sql = "INSERT INTO funcionario (nome, login, senha, tipo, status) VALUES ('$nome', '$login', '$senhaHash', '$tipo', '$status')"; 
 
 // Executa a query e verifica o resultado  
 if (mysqli_query($conn, $sql)) { 
@@ -59,9 +59,3 @@ Verificações Adicionais: Você pode querer adicionar verificações, como conf
 Validação do Formulário: Implementar validações adicionais para os dados do usuário (por exemplo, se o email está em um formato adequado ou se outras informações são válidas).
 Uso do arquivo conn.php: Assegure-se de que o arquivo conn.php está corretamente configurado e contém as definições de conexão com o banco de dados.
 Com essas implementações, seu código estará pronto para cadastrar um funcionário em um sistema de maneira segura e eficiente.
-
-Sider Fusion
-13
-
-Oferta Assustadora: 6 Dias Restante
-avatar -->

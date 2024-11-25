@@ -26,13 +26,16 @@
 
         Tipo: <br>
         <select name="tipo" id="tipo">
-            <option value="usuario">Usuário</option>
             <option value="admin">Administrador</option>
+            <option value="usuario">Usuário</option>
         </select>
         <br>
         
         Status:<br />  
-        <input type="text" name="status" required /><br />  
+        <select name="status" id="status">
+            <option value="ativo">Ativo</option>
+            <option value="inativo">Inativo</option>
+        </select> 
 
         <input type="submit" value="Enviar" />  
 

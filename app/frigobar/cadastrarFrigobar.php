@@ -26,8 +26,11 @@ include '../config/conn.php';
 
         Cadastro por acomodação:<br/>  
         <select name="acomodacao" class="required" required>  
-            <option value="">Escolha</option>  
+            <option value="1">Suíte Parnaioca</option>  
+            <option value="2">Suíte Lopes Mendes</option>  
+            <option value="3">Suíte Lagoa Azul</option>  
             <?php  
+            
                 $sql = "SELECT * FROM acomodacoes";  
                 $result = mysqli_query($conn, $sql);  
                 

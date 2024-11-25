@@ -2,6 +2,7 @@
 include '../../config/conn.php';
 
 // Dados do funcionário a serem atualizados  
+$id = $_POST['id']; 
 $nome = $_POST['nome']; 
 $login = $_POST['login']; 
 $senha = $_POST['senha']; 
@@ -24,4 +25,4 @@ mysqli_close($conn);
 ?>
 
 <br/>
-<a href="index.php">Página Inicial</a
+<a href="../index.php">Página Inicial</a

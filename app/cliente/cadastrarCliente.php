@@ -33,3 +33,5 @@ include '../config/conn.php'
     </form>  
 </body>  
 </html>
+
+<a href="../index.php">Paginal inicial</a>

@@ -31,12 +31,19 @@
 
             senha:<Br/>
             <input type="text" name="senha"  value="<?php echo ($row["senha"]) ?>"/><br/>
+                
+                Tipo: <br>
+            <select name="tipo" id="tipo">
+                <option value="admin">Administrador</option>
+                <option value="usuario">Usuário</option>
+            </select>
+            <br>
             
-            tipo:<Br/>
-            <input type="text" name="tipo"  value="<?php echo ($row["tipo"]) ?>"/><br/>
-            
-            status:<Br/>
-            <input type="text" name="status"  value="<?php echo ($row["status"]) ?>"/><br/>
+            Status:<br />  
+            <select name="status" id="status">
+                <option value="ativo">Ativo</option>
+                <option value="inativo">Inativo</option>
+            </select>
             
             <input type="submit" value="Enviar" />
 

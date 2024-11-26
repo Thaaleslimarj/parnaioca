@@ -55,3 +55,5 @@ include '../config/conn.php';
     </form>  
 </body>  
 </html>  
+
+<br><a href="../index.php">Página inicial</a>

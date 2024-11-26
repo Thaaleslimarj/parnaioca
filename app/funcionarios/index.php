@@ -29,7 +29,7 @@ include '../config/conn.php';
 
     <form action="index.php" method="get">
 
-        Nome:
+        <label for="text">Nome</label>
         <input type="text" name="nome" />
         <input type="submit" value="Enviar" />
 
@@ -91,7 +91,7 @@ include '../config/conn.php';
     <br>
     <a href="cadastrar.php"> Cadastrar funcionario </a>
     <br>
-    <a href="../../index.php">Página Inicial</a>
+    <a href="../index.php">Página Inicial</a>
 </body>
 
 </html>

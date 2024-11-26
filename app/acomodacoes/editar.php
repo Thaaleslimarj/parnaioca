@@ -46,4 +46,4 @@
 </html>
 
 <br/>
-<a href="index.php">Página Inicial</a>
+<a href="index.php">Página inicial</a>

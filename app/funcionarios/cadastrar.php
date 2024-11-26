@@ -12,32 +12,29 @@
     <h3>Cadastro de Funcionário</h3>  
     <form action="./include/gravarFuncionario.php" method="post" name="cadastro">  
 
-        Nome:<br />  
-        <input type="text" name="nome" required /><br />  
-
-        Login:<br />  
-        <input type="text" name="login" required /><br />  
-
-        Senha:<br />  
-        <input type="password" name="senha" required /><br />  
-<!-- 
-        Tipo:<br />  
-        <input type="text" name="tipo" required /><br />   -->
-
-        Tipo: <br>
+        <label for="nome">Nome:</label>  
+        <input type="text" id="nome" name="nome" required><br><br>  
+        
+        <label for="nome">Login</label>  
+        <input type="text" id="login" name="login" required><br><br>  
+        
+        <label for="nome">Senha</label>  
+        <input type="password" name="senha" required><br><br>  
+       
+        Tipo: 
         <select name="tipo" id="tipo">
             <option value="admin">Administrador</option>
             <option value="usuario">Usuário</option>
-        </select>
-        <br>
+        </select> <br><br>
         
-        Status:<br />  
+        
+        Status:  
         <select name="status" id="status">
             <option value="ativo">Ativo</option>
             <option value="inativo">Inativo</option>
-        </select> 
+        </select> <br><br>
 
-        <input type="submit" value="Enviar" />  
+        <input type="submit" value="Enviar" /> <p></p>
 
     </form>  
 

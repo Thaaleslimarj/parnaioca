@@ -89,7 +89,7 @@ include '../config/conn.php';
     }
     ?>
     <br>
-    <a href="cadastrar.php"> Cadastrar funcionario </a>
+    <a href="cadastrar.php"> Cadastrar funcionário </a>
     <br>
     <a href="../index.php">Página Inicial</a>
 </body>

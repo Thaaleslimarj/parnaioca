@@ -19,16 +19,14 @@ include '../config/conn.php';
         <input type="text" id="valor" name="valor" required><br><br>  
         
         <label for="capacidade">Capacidade:</label>  
-        <input type="number" id="capacidade" name="capacidade" required><br><br>  
+        <input type="number" id="capacidade" name="capacidade" max="1" required><br><br>  
         
         <label for="manutencao">Data da Manutenção:</label>  
         <input type="date" id="manuntencao" name="manutencao" required><br><br>  
 
         Cadastro por acomodação:<br/>  
         <select name="acomodacao" class="required" required>  
-            <option value="1">Suíte Parnaioca</option>  
-            <option value="2">Suíte Lopes Mendes</option>  
-            <option value="3">Suíte Lagoa Azul</option>  
+        
             <?php  
             
                 $sql = "SELECT * FROM acomodacoes";  

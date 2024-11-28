@@ -56,6 +56,8 @@ include '../config/conn.php';
                             <th>capacidade</th>  
                             <th>manutencao</th>    
                             <th>status</th>    
+                            <th>editar</th>    
+                            <th>excluir</th>    
                        </tr>";  
 
             // Enquanto houverem resultados, o código continuará buscando informações  
@@ -81,10 +83,10 @@ include '../config/conn.php';
         }  
     }  
     ?>  
-    <br>  
+    <br> <p></p> 
     <a href="cadastrarFrigobar.php">Cadastrar frigobar por acomodação:</a>  
     <br>  
-    <a href="cadastrarItens.php">Cadastrar itens no frigobar:</a>  
+    <a href="../itensfrigobar/index.php">Consultar itens no frigobar:</a>  
     <br>  
     <a href="estoque.php">Estoque:</a>  
     <br>  

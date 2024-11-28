@@ -94,7 +94,7 @@ include '../config/conn.php';
         }
     }
     ?>
-    <br>
+    <br><p></p>
     <a href="cadastrarCliente.php"> Cadastrar cliente </a>
     <br>
     <a href="../index.php">Página inicial</a>

@@ -40,4 +40,4 @@
 </html>
 
 <br/>
-<a href="index.php">Página Inicial</a>
+<a href="../frigobar/cadastrarFrigobar.php">Página Inicial</a>

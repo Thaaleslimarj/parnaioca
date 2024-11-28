@@ -7,12 +7,12 @@ include '../config/conn.php';
 
 <head>  
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
-    <title>Itens do frigobar</title>  
+    <title>Consultar Estoque</title>  
 
     <script>  
         function excluir(id) {  
             if (confirm('Deseja realmente excluir este nome?')) {  
-                location.href = 'include/itens_frigobar.php?id=' + id;  
+                location.href = 'include/excluirEstoque.php?id=' + id;  
             }  
         }  
     </script>  
@@ -20,11 +20,11 @@ include '../config/conn.php';
 
 <body>  
 
-    <h3>Consultar itens do Frigobar</h3>  
+    <h3>Consultar estoque</h3>  
 
-    <form action="./index.php" method="get">  
+    <form action="index.php" method="get">  
        
-        <b><p>Itens Frigobar:  
+        <b><p>Estoque:  
         <input type="text" name="nome" />  
         <input type="submit" value="Enviar" />  
         </b></p>
@@ -41,7 +41,7 @@ include '../config/conn.php';
         
         // Consulta ao banco de dados para buscar os itens do frigobar  
        
-        $sql = "select * from itens_frigobar where nome like '" . $nome . "%' "; 
+        $sql = "select * from estoque where nome like '" . $nome . "%' "; 
        
         $result = mysqli_query($conn, $sql);  
         $totalregistros = mysqli_num_rows($result); // Número de linhas do resultado  
@@ -51,9 +51,11 @@ include '../config/conn.php';
             echo "<table width='900px' border='1px'>  
                        <tr>  
                             <th>ID</th>  
-                            <th>idprodutos</th>  
-                            <th>idfrigobar</th>  
-                            <th>quantidade</th>  
+                            <th>Nome</th>  
+                            <th>valor</th>  
+                            <th>entradas</th>  
+                            <th>saidas</th>    
+                            <th>estoque</th>    
                        </tr>";  
 
             // Enquanto houverem resultados, o código continuará buscando informações  
@@ -61,11 +63,11 @@ include '../config/conn.php';
                 ?>  
                 <tr>  
                 <td><?php echo $row["id"] ?> </td>  
-                <td><?php echo $row["idprodutos"] ?></td>  
-                <td><?php echo $row["idfrigobar"] ?></td>  
-                <td><?php echo $row["quantidade"] ?></td>  
-                <td><a href="editar.php?id=<?php echo $row["id"] ?>">Editar</a></td>  
-                <td><a href="#" onclick="excluir(<?php echo $row["id"] ?>)">Excluir</a></td>  
+                <td><?php echo $row["nome"] ?></td>  
+                <td><?php echo $row["valor"] ?></td>  
+                <td><?php echo $row["entradas"] ?></td>  
+                <td><?php echo $row["saidas"] ?></td>    
+                <td><?php echo $row["estoque"] ?></td>    
                 </tr>  
                 <?php  
             }  
@@ -73,14 +75,15 @@ include '../config/conn.php';
             echo "</table>";  
             echo "Total de registros: $totalregistros";  
         } else {  
-            echo "Nenhum item encontrado no frigobar.";  
+            echo "Nenhum nome encontrado no frigobar.";  
         }  
     }  
     ?>  
-
-    <a href="cadastrarItens.php"> Cadastrar itens </a>
+      
+      
+    <a href="cadastrarEstoque.php"> Cadastrar estoque </a>
     <br>
-    <a href="../index.php">Página inicial</a>
+    <a href="../index.php">Página inicial</a>  
 </body>  
 
 </html>

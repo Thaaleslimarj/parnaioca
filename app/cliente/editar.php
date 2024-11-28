@@ -13,6 +13,7 @@
         $sql = "select * from clientes where id = " . $id;
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
+       
         // echo '<pre>';
         // print_r($row);
         // die();
@@ -29,7 +30,7 @@
             <input type="text" name="nome" value="<?php echo $row["nome"] ?>"/><br/>
 
             Data de nascimento:<Br/>
-            <input type="text" name="data_nascimento" value="<?php echo $row["data_nascimento"] ?>"/><br/>
+            <input type="date" name="data_nascimento" value="<?php echo $row["data_nascimento"] ?>"/><br/>
 
             Cpf:<Br/>
             <input type="text" name="cpf"  value="<?php echo ($row["cpf"]) ?>"/><br/>

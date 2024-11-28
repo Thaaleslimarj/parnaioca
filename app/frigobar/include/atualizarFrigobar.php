@@ -12,7 +12,7 @@ $status = $_POST['status'];
 
 // SQL para atualização  
 $sql = "update frigobar set 
-            idacomodacao = '$idacomodacao',
+            acomodacao = '$idacomodacao',
             nome = '$nome',
             valor = '$valor',
             capacidade = '$capacidade',

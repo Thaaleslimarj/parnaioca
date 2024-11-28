@@ -27,13 +27,13 @@
             <input type="text" name="nome" value="<?php echo $row["nome"] ?>"/><br/>
             
             Idacomodação:<Br/>
-            <input type="number" name="idacomodacao" value="<?php echo $row["nome"] ?>"/><br/>
+            <input type="number" name="idacomodacao" max="13" value="<?php echo $row["nome"] ?>"/><br/>
             
             Valor:<Br/>
             <input type="text" name="valor" value="<?php echo $row["valor"] ?>"/><br/>
 
             Capacidade:<Br/>
-            <input type="text" name="capacidade"  value="<?php echo ($row["capacidade"]) ?>"/><br/>
+            <input type="number" name="capacidade" max="1" value="<?php echo ($row["capacidade"]) ?>"/><br/>
             
             Manutenção:<Br/>
             <input type="text" name="manutencao"  value="<?php echo ($row["manutencao"]) ?>"/><br/>

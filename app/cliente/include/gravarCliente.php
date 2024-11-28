@@ -4,12 +4,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Captura os dados do formulário  
     $nome = $_POST['nome'];  
-    $data_nascimento = $_POST['data_nascimento'];  
+    $data_nascimento = $_POST['dtnascimento'];  
     $cpf = $_POST['cpf'];  
     $email = $_POST['email'];  
     $telefone = $_POST['telefone'];  
     $estado = $_POST['estado'];  
     $cidade = $_POST['cidade'];  
+    $status = $_POST['status'];  
+
 
     // Regra de email funcional, verifica cada etapa de construção do email
     $regraemail = "/^[a-zA-Z0-9.-_]+@[a-zA-Z0-9-]+\.[a-zA-Z.]+$/";
@@ -41,12 +43,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($flag ==0){
 
         // Criação da query para inserir os dados  
-        $sql = "INSERT INTO clientes (nome, data_nascimento, cpf, email, telefone, estado, cidade)  
-            VALUES ('$nome', '$data_nascimento', '$cpf', '$email', '$telefone', '$estado', '$cidade')";  
+        $sql = 
+            "INSERT INTO clientes (nome, data_nascimento, cpf, email, telefone, estado, cidade, status)  
+            VALUES ('$nome', '$data_nascimento', '$cpf', '$email', '$telefone', '$estado', '$cidade', '$status')
+        ";  
 
-if ($conn->query($sql) === TRUE) {  
-    echo "Cadastro realizado com sucesso!";  
-}}   
+    if ($conn->query($sql) === TRUE) {  
+        echo "Cadastro realizado com sucesso!";  
+    }}   
     echo $msg;
     // Fecha a conexão  
     $conn->close();  

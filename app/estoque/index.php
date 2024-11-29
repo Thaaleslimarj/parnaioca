@@ -75,7 +75,7 @@ include '../config/conn.php';
             echo "</table>";  
             echo "Total de registros: $totalregistros";  
         } else {  
-            echo "Nenhum nome encontrado no frigobar.";  
+            echo "Nenhum nome encontrado no estoque.";  
         }  
     }  
     ?>  

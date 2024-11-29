@@ -88,7 +88,7 @@ include '../config/conn.php';
     <br>  
     <a href="../itensfrigobar/index.php">Consultar itens no frigobar:</a>  
     <br>  
-    <a href="estoque.php">Estoque:</a>  
+    <a href="../estoque/">Estoque:</a>  
     <br>  
     
     <p></p>

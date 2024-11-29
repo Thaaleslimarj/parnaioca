@@ -83,7 +83,7 @@ include '../config/conn.php';
       
     <a href="cadastrarEstoque.php"> Cadastrar estoque </a>
     <br>
-    <a href="../index.php">Página inicial</a>  
+    <a href="../">Página inicial</a>  
 </body>  
 
 </html>

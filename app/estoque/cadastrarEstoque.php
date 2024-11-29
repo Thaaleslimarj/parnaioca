@@ -9,7 +9,7 @@ include '../config/conn.php';
     <title>Cadastrar estoque</title>  
 </head>  
 <body>  
-    <h3>Cadastrar estoque</h3>  
+    <h3>Cadastrar estoque:</h3>  
     <form action="include/gravarEstoque.php" method="POST">  
        
         
@@ -34,4 +34,4 @@ include '../config/conn.php';
 
 </html>  
 
-<br><a href="../index.php">Página inicial</a>
+<br><a href="index.php">Página inicial</a>

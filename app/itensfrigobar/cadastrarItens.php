@@ -30,7 +30,7 @@ include '../config/conn.php';
         </select><br><br>
         
 
-        <label for="idfrigobar">Frigobar:</label>  
+        <label for="idfrigobar">Frigobares:</label>  
         <select name="idfrigobar" id="idfrigobar">
         <option value="">Selecione um frigobar</option>
         <?php 
@@ -48,7 +48,7 @@ include '../config/conn.php';
         </select><br><br>
         
         <label for="quantidade">Quantidade:</label>
-        <input type="number" id="quantidade" name="quantidade" max="30" required><br><br>  
+        <input type="number" id="quantidade" name="quantidade" max="50" required><br><br>  
         
         <input type="submit" value="Cadastrar">  
     </form>  

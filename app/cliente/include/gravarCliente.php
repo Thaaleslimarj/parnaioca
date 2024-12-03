@@ -20,12 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     // Marcador de erro nas validações
-    $flag = 0;
+    $erro = 0;
     // Mensagem exibida de erro
     $msg = "";
     
     if (!preg_match($regranome, $nome)){
-        $flag = 1;
+        $erro = 1;
         $msg = $msg. "preencha o nome corretamente";
 
     } 
@@ -33,14 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verificação de consistencia na construção de email
     if(!preg_match($regraemail, $email)){
         // marcador definindo que existe erro
-        $flag = 1;
+        $erro = 1;
         // Mensagem exibida explicando o erro
         $msg = "Preencha o email corretamente";
     }
     
 
     //  Verifica se após as validações o marcador continua zero, se continuar executara o codigo a seguir
-    if($flag ==0){
+    if($erro ==0){
 
         // Criação da query para inserir os dados  
         $sql = 

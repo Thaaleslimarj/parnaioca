@@ -7,47 +7,54 @@ include '../../config/conn.php';
     $valor = $_POST['valor'];  
     $entradas = $_POST['entradas'];  
     $saidas = $_POST['saidas'];  
-    $estoque = $_POST['estoque'];  
+    $estoque = $_POST['estoque'];
     
+        // echo "<pre>";
+        // print_r($_POST);
+        // die;
+        // [
+
+        // ];
+
     // Marcador de erro nas validações  
-    $flag = 0;  
+    $erro = 0;  
     // Mensagem exibida de erro  
     $msg = "";  
     
     // Validação de produtos (nome)  
-    if (empty($nome)) {  
-        $flag = 1;  
+    if (!$nome) {  
+        $erro = 1;  
         $msg .= "O nome é obrigatório.<br>";  
     }  
     
     // Validação de valor  
     if (empty($valor)) {  
-        $flag = 1;  
+        $erro = 1;  
         $msg .= "O valor é obrigatório.<br>";  
     }  
     
      // Validação de entradas
      if (empty($entradas)) {
-        $flag = 1;
+        $erro = 1;
         $msg .= "O número de entradas é obrigatório.<br>";
     } 
 
     // Validação de saídas
     if (empty($saidas)) {
-        $flag = 1;
+        $erro = 1;
         $msg .= "O número de saídas é obrigatório.<br>";
     }
     
      // Validação de estoque
      if (empty($estoque)) {
-        $flag = 1;
+        $erro = 1;
         $msg .= "O estoque é obrigatório.<br>";
     }
     
-    //FALTA FAZER A VALIDAÇÃO DAS VARIÁVEIS AQUI !!!!
+    //FALTA FAZER A VALIDAÇÃO DOS CAMPOS AQUI 
          
     // Verifica se após as validações o marcador continua zero, se continuar executará o código a seguir  
-    if ($flag == 0) {  
+    if ($erro == 0) {  
         
         // Escapar os dados para evitar injeção de SQL  
         $nome = mysqli_real_escape_string($conn, $nome);  

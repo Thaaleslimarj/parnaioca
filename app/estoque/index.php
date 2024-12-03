@@ -56,6 +56,8 @@ include '../config/conn.php';
                             <th>entradas</th>  
                             <th>saidas</th>    
                             <th>estoque</th>    
+                            <th>editar</th>    
+                            <th>excluir</th>    
                        </tr>";  
 
             // Enquanto houverem resultados, o código continuará buscando informações  
@@ -68,7 +70,9 @@ include '../config/conn.php';
                 <td><?php echo $row["entradas"] ?></td>  
                 <td><?php echo $row["saidas"] ?></td>    
                 <td><?php echo $row["estoque"] ?></td>    
-                </tr>  
+                <td><a href="editar.php?id=<?php echo $row["id"] ?>">...</a></td>
+                <td><a href="#"onclick="excluir(<?php echo $row["id"] ?>)">X</a></td>
+                </tr>
                 <?php  
             }  
 
@@ -80,8 +84,8 @@ include '../config/conn.php';
     }  
     ?>  
       
-      
-    <a href="cadastrarEstoque.php"> Cadastrar estoque </a>
+     <br><p></p>
+    <a href="cadastrarEstoque.php"> Cadastrar estoque: </a>
     <br>
     <a href="../">Página inicial</a>  
 </body>  

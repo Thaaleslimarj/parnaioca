@@ -28,29 +28,31 @@ include '../../config/conn.php';
     }  
     
     // Validação de valor  
-    if (empty($valor)) {  
+    if (!$valor) {  
         $erro = 1;  
         $msg .= "O valor é obrigatório.<br>";  
     }  
     
      // Validação de entradas
-     if (empty($entradas)) {
+     if (!$entradas) {
         $erro = 1;
         $msg .= "O número de entradas é obrigatório.<br>";
     } 
 
     // Validação de saídas
-    if (empty($saidas)) {
+    if (!$saidas) {
         $erro = 1;
         $msg .= "O número de saídas é obrigatório.<br>";
     }
     
      // Validação de estoque
-     if (empty($estoque)) {
+     if (!$estoque) {
         $erro = 1;
         $msg .= "O estoque é obrigatório.<br>";
     }
     
+    
+
     //FALTA FAZER A VALIDAÇÃO DOS CAMPOS AQUI 
          
     // Verifica se após as validações o marcador continua zero, se continuar executará o código a seguir  

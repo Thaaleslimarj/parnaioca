@@ -7,11 +7,13 @@ include '../../config/conn.php';
     $idfrigobar = $_POST['idfrigobar']; 
     $quantidade = $_POST['quantidade']; 
 
+    //fazer validação de quantidade de itens se for maior que a quantidade do estoque
+
     // SQL para atualização  
     $sql = "update itens_frigobar set 
                 idprodutos = '$idprodutos',
                 idfrigobar = '$idfrigobar',
-                quantidade = '$quantidade',
+                quantidade = '$quantidade'
                 where id = '$id'";
                 
 

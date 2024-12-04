@@ -45,9 +45,18 @@ include '../../config/conn.php';
         
         $row = mysqli_fetch_assoc($frigobar);
         $capacidade = $row ['capacidade'];
-        $itens = mysqli_query($conn, "SELECT * FROM itens_frigobar WHERE id = $idfrigobar"); 
-        $row1 = mysqli_fetch_assoc($itens);
-        $qtditens = array_sum($row1['quantidade']);
+        $itens = mysqli_query($conn, "SELECT * FROM itens_frigobar WHERE id = $idfrigobar");
+        $quantidades = [];
+        while ($row1 = mysqli_fetch_assoc($itens)) { 
+            if (isset($row1['quantidade']) && is_numeric($row1['quantidade'])) {    
+        $quantidades[] = (int)$row1['quantidade'];
+            }
+        }    
+        $qtditens = array_sum($quantidades);
+        
+        
+
+
     if (($quantidade + $qtditens) > $capacidade){
             $erro = 1;
             $msg = "quantidade de itens informada maior do que a capacidade do frigobar";

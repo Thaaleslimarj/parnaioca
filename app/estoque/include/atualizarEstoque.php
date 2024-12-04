@@ -15,9 +15,10 @@ $sql = "update estoque set
             valor = '$valor',
             entradas = '$entradas',
             saidas = '$saidas',
-            estoque = '$estoque',
-            where id = $id";
+            estoque = '$estoque'
+            where id = '$id'";
 
+        
 if (mysqli_query($conn, $sql)) {  
     echo "Registro atualizado com sucesso!";  
 } else {  

@@ -41,7 +41,7 @@ include '../config/conn.php';
         
         // Consulta ao banco de dados para buscar os itens do frigobar  
        
-        $sql = "select * from itens_frigobar where nome like '" . $nome . "%' "; 
+        $sql = "select * from itens_frigobar where id like '" . $nome . "%' "; 
        
         $result = mysqli_query($conn, $sql);  
         $totalregistros = mysqli_num_rows($result); // Número de linhas do resultado  
@@ -54,6 +54,8 @@ include '../config/conn.php';
                             <th>idprodutos</th>  
                             <th>idfrigobar</th>  
                             <th>quantidade</th>  
+                            <th>editar</th>  
+                            <th>excluir</th>  
                        </tr>";  
 
             // Enquanto houverem resultados, o código continuará buscando informações  
@@ -78,6 +80,7 @@ include '../config/conn.php';
     }  
     ?>  
 
+    <b></b><p></p>
     <a href="cadastrarItens.php"> Cadastrar itens </a>
     <br>
     <a href="../index.php">Página inicial</a>

@@ -46,4 +46,4 @@
 </html>
 
 <br/>
-<a href="../frigobar/cadastrarEstoque.php">Página Inicial</a>
+<a href="../frigobar/index.php">Página Inicial</a>

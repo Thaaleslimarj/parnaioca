@@ -12,4 +12,6 @@ session_start()
 
 <a href="./frigobar/index.php">Frigobar:</a><br/>
 
+<a href="./estacionamento/index.php">Estacionamento:</a><br/>
+
 <p><a href="javascript:history.go(-1)">Voltar para a página anterior</a></p>

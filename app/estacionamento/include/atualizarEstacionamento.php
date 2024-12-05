@@ -1,17 +1,16 @@
 <?php  
 include '../../config/conn.php';
 
-// Dados do funcionário a serem atualizados  
+// Dados do estacionamento a serem atualizados  
 $nome = $_POST['nome']; 
-$valor = $_POST['valor']; 
-$tipo = $_POST['tipo']; 
+$acomodacao = $_POST['acomodacao']; 
+$placa = $_POST['placa']; 
 $status = $_POST['status']; 
 $id = $_POST['id'];
-$capacidade = $_POST['capacidade'];
 
 // SQL para atualização  
-$sql = "update acomodacoes set 
-            nome = '".$nome."', valor = '".$valor."', capacidade = '".$capacidade."' , tipo = '".$tipo."' , status = '".$status."'
+$sql = "update estacionamento set 
+            nome = '".$nome."', acomodacao = '".$acomodacao."', placa = '".$placa."' , status = '".$status. "'
             where id = ".$id;  
 
 if (mysqli_query($conn, $sql)) {  

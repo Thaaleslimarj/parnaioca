@@ -27,11 +27,16 @@
             <input type="text" name="nome" value="<?php echo $row["nome"] ?>"/><br/>
 
             Acomodação:<Br/>
-            <input type="text" name="acomodacao" value="<?php echo $row["valor"] ?>"/><br/>
+            <input type="text" name="acomodacao" value="<?php echo $row["acomodacao"] ?>"/><br/>
 
             Placa:<Br/>
-            <input type="text" name="placa"  value="<?php echo ($row["capacidade"]) ?>"/><br/>
+            <input type="text" name="placa"  value="<?php echo ($row["placa"]) ?>"/><br/>
             
+            Status:<br />  
+            <select name="status" id="status">
+                <option value="ativo">Ativo</option>
+                <option value="inativo">Inativo</option>
+            </select>
             
             <input type="submit" value="Enviar" />
 

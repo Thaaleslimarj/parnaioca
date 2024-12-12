@@ -25,8 +25,6 @@ include '../config/conn.php';
     <label for="saidas">Saidas:</label>
     <input type="text" id="saidas" name="saidas" required><br><br>  
     
-    <label for="estoque">Estoque:</label>
-    <input type="text" id="estoque" name="estoque" required><br><br>         
         
         <input type="submit" value="Cadastrar">  
     </form>  

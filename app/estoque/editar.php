@@ -35,8 +35,6 @@
             Saidas:<Br/>
             <input type="text" name="saidas"  value="<?php echo ($row["saidas"]) ?>"/><br/>
             
-            estoque:<Br/>
-            <input type="text" name="estoque"  value="<?php echo ($row["estoque"]) ?>"/><br/>
             
             <input type="submit" value="Enviar" />
 

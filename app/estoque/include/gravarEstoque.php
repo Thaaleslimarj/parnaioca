@@ -7,7 +7,6 @@ include '../../config/conn.php';
     $valor = $_POST['valor'];  
     $entradas = $_POST['entradas'];  
     $saidas = $_POST['saidas'];  
-    $estoque = $_POST['estoque'];
     
         // echo "<pre>";
         // print_r($_POST);
@@ -51,9 +50,11 @@ include '../../config/conn.php';
         $msg .= "O estoque é obrigatório.<br>";
     }
     
-    
-
-    //FALTA FAZER A VALIDAÇÃO DOS CAMPOS AQUI 
+    //atualizar estoque
+    $novaQuantidade = $entradas - $saidas;
+    if ($novaQuantidade <0 ){
+        echo "Não é possível retirar mais produtos do que os disponíveis.";
+    } 
          
     // Verifica se após as validações o marcador continua zero, se continuar executará o código a seguir  
     if ($erro == 0) {  
@@ -63,11 +64,11 @@ include '../../config/conn.php';
         $valor = mysqli_real_escape_string($conn, $valor);  
         $entradas = mysqli_real_escape_string($conn, $entradas);  
         $saidas = mysqli_real_escape_string($conn, $saidas);  
-        $estoque = mysqli_real_escape_string($conn, $estoque);  
+        $novaQuantidade = mysqli_real_escape_string($conn, $novaQuantidade);  
 
         // Criação da query para inserir os dados  
         $sql = "INSERT INTO estoque (nome, valor, entradas, saidas, estoque)  
-                VALUES ('$nome', '$valor', '$entradas', '$saidas', '$estoque')";  
+                VALUES ('$nome', '$valor', '$entradas', '$saidas', '$novaQuantidade')";  
 
     if ($conn->query($sql) === TRUE) {  
             echo "Cadastro realizado com sucesso";  

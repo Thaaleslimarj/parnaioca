@@ -47,7 +47,7 @@ include '../config/conn.php';
 
         $nome = $_GET["nome"];
 
-        $sql = "select * from reserva where nome like '" . $nome . "%' ";
+        $sql = "select * from reserva where id like '" . $nome . "%' ";
 
         $result = mysqli_query($conn, $sql);
         $totalregistros = mysqli_num_rows($result); //numero de linhas do resultado

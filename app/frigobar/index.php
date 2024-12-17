@@ -70,8 +70,8 @@ include '../config/conn.php';
                 <td><?php echo $row["capacidade"] ?></td>  
                 <td><?php echo $row["manutencao"] ?></td>    
                 <td><?php echo $row["status"] ?></td>    
-                <td><a href="editar.php?id=<?php echo $row["id"] ?>">Editar</a></td>  
-                <td><a href="#" onclick="excluir(<?php echo $row["id"] ?>)">Excluir</a></td>  
+                <td><a href="editar.php?id=<?php echo $row["id"] ?>">...</a></td>  
+                <td><a href="#" onclick="excluir(<?php echo $row["id"] ?>)">X</a></td>  
                 </tr>  
                 <?php  
             }  

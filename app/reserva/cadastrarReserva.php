@@ -17,11 +17,10 @@ include '../config/conn.php';
         <br>    
         <label for="id_cliente">CPF do cliente:</label>  
         <input type="text" id="id_cliente" name="id_cliente" maxlength="11" required>  
-        
         <br><br>
         <label for="qtdhospede">Numero de hóspede:</label>  
         <input type="text" id="qtdhospede" name="qtdhospede" required>  
-                
+
         <br><br>
         <label for="acomodacao">Cadastro de reserva:</label>  
         <select name="reserva" id="reserva" class="required" required>  

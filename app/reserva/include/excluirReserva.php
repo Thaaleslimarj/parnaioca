@@ -3,7 +3,7 @@ $id = $_GET["id"];
 
 include_once '../../app/config/conn.php';
 
-    $sql = "delete from itens_frigobar where id=" . $id;
+    $sql = "delete from reserva where id=" . $id;
 
         if (mysqli_query($conn, $sql)) {
         echo "Deletado com sucesso!";  

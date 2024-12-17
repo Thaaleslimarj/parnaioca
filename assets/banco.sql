@@ -64,6 +64,18 @@ FOREIGN KEY(nome) REFERENCES cliente (id),
 FOREIGN KEY(acomodacao) REFERENCES acomodacoes (id)
 )
 
+CREATE TABLE reserva (
+id int PRIMARY KEY,
+id_acomodacao int,
+id_cliente int,
+data_inicio date,
+data_final date,
+qtdhospede int,
+status enum('ativo','inativo'),
+FOREIGN KEY(id_acomodacao) REFERENCES acomodacoes (id),
+FOREIGN KEY(id_cliente) REFERENCES acomodacoes (id)
+)
+
 ALTER TABLE frigobar ADD FOREIGN KEY(acomodacao) REFERENCES acomodacoes (id)
 
 

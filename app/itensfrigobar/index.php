@@ -66,8 +66,8 @@ include '../config/conn.php';
                 <td><?php echo $row["idprodutos"] ?></td>  
                 <td><?php echo $row["idfrigobar"] ?></td>  
                 <td><?php echo $row["quantidade"] ?></td>  
-                <td><a href="editar.php?id=<?php echo $row["id"] ?>">Editar</a></td>  
-                <td><a href="#" onclick="excluir(<?php echo $row["id"] ?>)">Excluir</a></td>  
+                <td><a href="editar.php?id=<?php echo $row["id"] ?>">...</a></td>  
+                <td><a href="#" onclick="excluir(<?php echo $row["id"] ?>)">X</a></td>  
                 </tr>  
                 <?php  
             }  

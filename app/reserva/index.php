@@ -58,13 +58,15 @@ include '../config/conn.php';
             echo "<table width='900px' border='1px'>
                        <tr>
                             <th>Id</th>
-                            <th>id_acomodacao</th>
-                            <th>id_cliente</th>
-                            <th>data_inicio</th>
-                            <th>data_final</th>
-                            <th>qtdhospede</th>
-                            <th>status</th>
-                       </tr>";
+                            <th>ID acomodacao</th>
+                            <th>Cpf do cliente</th>
+                            <th>Data inicio</th>
+                            <th>Data final</th>
+                            <th>Hóspedes</th>
+                            <th>Status</th>
+                            <th>Editar</th>
+                            <th>Excluir</th>
+                            </tr>";
             // enquanto houverem resultados o codigo continuara buscando informações;;    
             while ($row = mysqli_fetch_array($result)) {
                 ?>

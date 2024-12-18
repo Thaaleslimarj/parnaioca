@@ -1,7 +1,7 @@
 <?php
 $id = $_GET["id"];
 
-include_once '../../app/config/conn.php';
+include_once '../../config/conn.php';
 
     $sql = "delete from reserva where id=" . $id;
 

@@ -24,7 +24,7 @@ include '../config/conn.php';
         <label for="manutencao">Data da Manutenção:</label>  
         <input type="date" id="manuntencao" name="manutencao" required><br><br>  
 
-        Cadastro por acomodação:<br/>  
+        Cadastro por acomodação:  
         <select name="acomodacao" class="required" required>  
         
             <?php  
@@ -43,6 +43,7 @@ include '../config/conn.php';
             ?>  
         </select>   
         
+        <br><br>
         <label for="status">Status:</label>  
         <select id="status" name="status" required>  
             <option value="ativo">Ativo</option>  

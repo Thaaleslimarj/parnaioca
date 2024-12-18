@@ -11,9 +11,15 @@ $qtdhospede = $_POST['qtdhospede'];
 $status = $_POST['status']; 
 
 // SQL para atualização  
-$sql = "update reserva set 
-            id_acomodacao = '".$id_acomodacao."', id_cliente = '".$id_cliente."', data_inicio = '".$data_inicio."' , data_final = '".$data_final."' , qtdhospede = '".$qtdhospede."' , status = '".$status. "'
-            where id = ".$id;  
+ $sql = "update reserva set 
+            id_acomodacao = '$id_acomodacao' ,
+            id_cliente = '$id_cliente' ,
+            data_inicio = '$data_inicio' ,
+            data_final = '$data_final' ,
+            qtdhospede = '$qtdhospede' ,
+            status = '$status' 
+            where id = $id";  
+    
 
 if (mysqli_query($conn, $sql)) {  
     echo "Registro atualizado com sucesso!";  

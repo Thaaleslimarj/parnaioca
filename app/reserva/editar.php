@@ -10,7 +10,7 @@
         include_once '../config/conn.php';
         $id = $_GET["id"];
 
-        $sql = "select * from acomodacoes where id = " . $id;
+        $sql = "select * from reserva where id = " . $id;
         $result = mysqli_query($conn, $sql);
         // linha a linha do banco
         $row = mysqli_fetch_array($result);
@@ -24,19 +24,19 @@
             <input type="hidden" readonly="true" name="id" value="<?php echo $row["id"] ?>"/>
 
             Idacomodacao:<Br/>
-            <input type="text" name="id_acomodacao" value="<?php echo $row["nome"] ?>"/><br/>
+            <input type="text" name="id_acomodacao" value="<?php echo $row["id_acomodacao"] ?>"/><br/>
 
             Idcliente:<Br/>
-            <input type="text" name="id_cliente" value="<?php echo $row["valor"] ?>"/><br/>
+            <input type="text" name="id_cliente" value="<?php echo $row["id_cliente"] ?>"/><br/>
 
             Data de inicio:<Br/>
-            <input type="date" name="data_inicio"  value="<?php echo ($row["capacidade"]) ?>"/><br/>
+            <input type="date" name="data_inicio"  value="<?php echo ($row["data_inicio"]) ?>"/><br/>
             
             Data final:<Br/>
-            <input type="date" name="data_final"  value="<?php echo ($row["tipo"]) ?>"/><br/>
+            <input type="date" name="data_final"  value="<?php echo ($row["data_final"]) ?>"/><br/>
             
             Quantidade de hóspede:<Br/>
-            <input type="number" name="qtd_hospede"  value="<?php echo ($row["status"]) ?>"/><br/>
+            <input type="number" name="qtdhospede"  value="<?php echo ($row["qtdhospede"]) ?>"/><br/>
             
             Status:<br />  
             <select name="status" id="status">

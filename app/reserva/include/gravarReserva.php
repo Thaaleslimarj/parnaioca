@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data_inicio = $_POST['data_inicio'];  
     $data_final = $_POST['data_final'];  
     $qtdhospede = $_POST['qtdhospede'];  
+    $data_checkin = $_POST['data_checkin'] ?? null;  
     $status = $_POST['status'];  
      
     // Marcador de erro nas validações  
@@ -51,11 +52,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $msg .= "Status é obrigatório.<br>";  
     }    
 
+    $buscavaloracomodacao = "SELECT valor FROM acomodacoes WHERE id = $id_acomodacao";
+    $result = mysqli_query($conn, $buscavaloracomodacao);
+        // linha a linha do banco
+        $valoracomodacao = mysqli_fetch_array($result);
+
     // Verifica se após as validações o marcador continua zero (sem erros)  
     if($erro == 0) {  
         // Criação da query para inserir os dados  
-        $sql = "INSERT INTO reserva (id_acomodacao, id_cliente, data_inicio, data_final, qtdhospede, status)  
-            VALUES ('$id_acomodacao', '$id_cliente', '$data_inicio', '$data_final', '$qtdhospede', '$status')";  
+        $sql = "INSERT INTO reserva (id_acomodacao, id_cliente, data_inicio, data_final, qtdhospede, status, data_checkin, valor_total)  
+            VALUES ('$id_acomodacao', '$id_cliente', '$data_inicio', '$data_final', '$qtdhospede', '$status', '$data_checkin', '$valoracomodacao[0]')";  
 
         if ($conn->query($sql) === TRUE) {  
             echo "Reserva realizada com sucesso!";  
@@ -67,7 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }  
 
     // Fecha a conexão  
-    $conn->close();  
+    $conn->close();
+
 }  
 ?>  
 <br>  

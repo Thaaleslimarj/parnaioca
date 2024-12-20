@@ -52,6 +52,8 @@ include '../config/conn.php';
         $result = mysqli_query($conn, $sql);
         $totalregistros = mysqli_num_rows($result); //numero de linhas do resultado
 
+
+
         if ($totalregistros > 0) {
             //tem cadastro
             //echo <table><th> - front end, pode modificar a escrita a vontade 
@@ -66,6 +68,7 @@ include '../config/conn.php';
                             <th>Status</th>
                             <th>Editar</th>
                             <th>Excluir</th>
+                            <th>check-in</th>
                             </tr>";
             // enquanto houverem resultados o codigo continuara buscando informações;;    
             while ($row = mysqli_fetch_array($result)) {
@@ -81,6 +84,9 @@ include '../config/conn.php';
                 <td><?php echo $row["status"] ?></td>
                 <td><a href="editar.php?id=<?php echo $row["id"] ?>">...</a></td>
                 <td><a href="#"onclick="excluir(<?php echo $row["id"] ?>)">X</a></td>
+                <td>
+                    <button onclick="">checkin</button>
+                </td>
                 </tr>
                 <?php
             }

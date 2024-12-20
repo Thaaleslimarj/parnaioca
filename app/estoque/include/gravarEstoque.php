@@ -44,11 +44,11 @@ include '../../config/conn.php';
         $msg .= "O número de saídas é obrigatório.<br>";
     }
     
-     // Validação de estoque
-     if (!$estoque) {
-        $erro = 1;
-        $msg .= "O estoque é obrigatório.<br>";
-    }
+    //  // Validação de estoque
+    //  if (!$estoque) {
+    //     $erro = 1;
+    //     $msg .= "O estoque é obrigatório.<br>";
+    // }
     
     //atualizar estoque
     $novaQuantidade = $entradas - $saidas;

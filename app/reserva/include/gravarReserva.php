@@ -3,8 +3,8 @@ include '../../config/conn.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {  
     // Captura os dados do formulário    
-    $id_acomodacao = $_POST['reserva'];  
-    $id_cliente = $_POST['id_cliente'];  
+    $id_acomodacao = $_POST['id_acomodacao'];  
+    $cpf = $_POST['cpf'];  
     $data_inicio = $_POST['data_inicio'];  
     $data_final = $_POST['data_final'];  
     $qtdhospede = $_POST['qtdhospede'];  
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }  
 
     // Validação de cliente  
-    if(empty($id_cliente)) {  
+    if(empty($cpf)) {  
         $erro = 1;  
         $msg .= "Cliente é obrigatório.<br>";  
     }  

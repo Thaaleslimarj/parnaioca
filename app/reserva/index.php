@@ -77,7 +77,7 @@ include '../config/conn.php';
                 <tr>
                 <td><?php echo $row["id"] ?> </td>
                 <td><?php echo $row["id_acomodacao"] ?></td>
-                <td><?php echo $row["id_cliente"] ?></td>
+                <td><?php echo $row["cpf"] ?></td>
                 <td><?php echo $row["data_inicio"] ?></td>
                 <td><?php echo $row["data_final"] ?></td>
                 <td><?php echo $row["qtdhospede"] ?></td>
@@ -99,7 +99,7 @@ include '../config/conn.php';
     }
     ?>
     <br><p></p>
-    <a href="cadastrarReserva.php"> Cadastrar reserva </a>
+    <a href="cadastrarReserva.php"> Cadastrar reserva: </a>
     <br>
     <a href="../index.php">Página inicial</a>
 </body>

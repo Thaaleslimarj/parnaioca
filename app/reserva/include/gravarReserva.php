@@ -3,8 +3,8 @@ include '../../config/conn.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {  
     // Captura os dados do formulário    
-    $id_acomodacao = $_POST['reserva'];  
-    $id_cliente = $_POST['id_cliente'];  
+    $id_acomodacao = $_POST['id_acomodacao'];  
+    $cpf = $_POST['cpf'];  
     $data_inicio = $_POST['data_inicio'];  
     $data_final = $_POST['data_final'];  
     $qtdhospede = $_POST['qtdhospede'];  
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }  
 
     // Validação de cliente  
-    if(empty($id_cliente)) {  
+    if(empty($cpf)) {  
         $erro = 1;  
         $msg .= "Cliente é obrigatório.<br>";  
     }  
@@ -54,8 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica se após as validações o marcador continua zero (sem erros)  
     if($erro == 0) {  
         // Criação da query para inserir os dados  
-        $sql = "INSERT INTO reserva (id_acomodacao, id_cliente, data_inicio, data_final, qtdhospede, status)  
-            VALUES ('$id_acomodacao', '$id_cliente', '$data_inicio', '$data_final', '$qtdhospede', '$status')";  
+        $sql = "INSERT INTO reserva (id_acomodacao, cpf, data_inicio, data_final, qtdhospede, status)  
+            VALUES ('$id_acomodacao', '$cpf', '$data_inicio', '$data_final', '$qtdhospede', '$status')";  
 
         if ($conn->query($sql) === TRUE) {  
             echo "Reserva realizada com sucesso!";  

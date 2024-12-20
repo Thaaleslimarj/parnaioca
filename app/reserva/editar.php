@@ -23,11 +23,11 @@
 
             <input type="hidden" readonly="true" name="id" value="<?php echo $row["id"] ?>"/>
 
-            Idacomodacao:<Br/>
+            Acomodação:<Br/>
             <input type="text" name="id_acomodacao" value="<?php echo $row["id_acomodacao"] ?>"/><br/>
 
-            Idcliente:<Br/>
-            <input type="text" name="id_cliente" value="<?php echo $row["id_cliente"] ?>"/><br/>
+            Cpf:<Br/>
+            <input type="text" name="cpf" value="<?php echo $row["cpf"] ?>"/><br/>
 
             Data de inicio:<Br/>
             <input type="date" name="data_inicio"  value="<?php echo ($row["data_inicio"]) ?>"/><br/>
@@ -44,7 +44,7 @@
                 <option value="inativo">Inativo</option>
             </select>
             
-            
+            <br><br>
             <input type="submit" value="Enviar" />
 
         </form>        

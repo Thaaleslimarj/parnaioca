@@ -14,4 +14,4 @@ include_once '../../../app/config/conn.php';
 ?>
 
 <br/>
-<a href="../../cliente/index.php">Página inicial</a>
+<a href="../../frigobar/index.php">Página inicial</a>

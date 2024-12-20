@@ -11,19 +11,22 @@ include '../config/conn.php';
     </style>  
 </head>  
 <body>  
-    <h3>Cadastro de Reserva</h3>  
+    <h3>Reserva:</h3>  
     <form action="include/gravarReserva.php" method="POST">  
         
+
+
         <br>    
-        <label for="id_cliente">CPF do cliente:</label>  
-        <input type="text" id="id_cliente" name="id_cliente" maxlength="11" required>  
+        <label for="cpf">CPF do cliente:</label>  
+        <input type="text" id="cpf" name="cpf" maxlength="11" required>  
         <br><br>
+
         <label for="qtdhospede">Numero de hóspede:</label>  
-        <input type="text" id="qtdhospede" name="qtdhospede" required>  
+        <input type="number" id="qtdhospede" name="qtdhospede" maxlength="5">  
 
         <br><br>
-        <label for="acomodacao">Cadastro de reserva:</label>  
-        <select name="reserva" id="reserva" class="required" required>  
+        <label for="id_acomodacao">Cadastro de reserva:</label>  
+        <select name="id_acomodacao" id="id_acomodacao" class="required" required>  
             <?php  
                 $sql = "SELECT * FROM acomodacoes";  
                 $result = mysqli_query($conn, $sql);  

@@ -3,8 +3,8 @@ include '../../config/conn.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {  
     // Captura os dados do formulário    
-    $id_acomodacao = $_POST['id_acomodacao'];  
-    $cpf = $_POST['cpf'];  
+    $id_acomodacao = $_POST['reserva'];  
+    $cpf = $_POST['id_cliente'];  
     $data_inicio = $_POST['data_inicio'];  
     $data_final = $_POST['data_final'];  
     $qtdhospede = $_POST['qtdhospede'];  
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($erro == 0) {  
         // Criação da query para inserir os dados  
         $sql = "INSERT INTO reserva (id_acomodacao, id_cliente, data_inicio, data_final, qtdhospede, status, data_checkin, valor_total)  
-            VALUES ('$id_acomodacao', '$id_cliente', '$data_inicio', '$data_final', '$qtdhospede', '$status', '$data_checkin', '$valoracomodacao[0]')";  
+            VALUES ('$id_acomodacao', '$cpf ', '$data_inicio', '$data_final', '$qtdhospede', '$status', '$data_checkin', '$valoracomodacao[0]')";  
 
         if ($conn->query($sql) === TRUE) {  
             echo "Reserva realizada com sucesso!";  

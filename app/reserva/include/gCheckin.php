@@ -85,3 +85,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }  
  
 ?>
+
+<p><a href="javascript:history.go(-1)">Voltar para a página anterior</a></p>

@@ -12,7 +12,7 @@ include '../config/conn.php';
     <h3>Cadastro de estacionamento:</h3>  
     <form action="include/gravarEstacionamento.php" method="POST">  
        
-        <label for="nome">Nome:</label>  
+        <label for="nome">Nome do carro:</label>  
         <input type="text" id="nome" name="nome" required><br><br>  
         
         <label for="acomodacao">Acomodação:</label>  
@@ -49,4 +49,4 @@ include '../config/conn.php';
 </body>  
 </html>  
 
-<br><a href="../index.php">Página inicial</a>
+<br><a href="../estacionamento/">Página inicial</a>

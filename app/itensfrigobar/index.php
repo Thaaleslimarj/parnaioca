@@ -80,10 +80,10 @@ include '../config/conn.php';
     }  
     ?>  
 
-    <b></b><p></p>
-    <a href="cadastrarItens.php"> Cadastrar itens </a>
-    <br>
-    <a href="../index.php">Página inicial</a>
+    <b><p></p>
+    <a href="cadastrarItens.php"> Cadastrar itens: </a>
+    <br><br>
+    <a href="../frigobar/">Página inicial:</a>
 </body>  
 
 </html>

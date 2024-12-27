@@ -27,7 +27,7 @@
             <input type="text" name="id_acomodacao" value="<?php echo $row["id_acomodacao"] ?>"/><br/>
 
             Cpf:<Br/>
-            <input type="text" name="cpf" value="<?php echo $row["cpf"] ?>"/><br/>
+            <input type="text" name="id_cliente" value="<?php echo $row["id_cliente"] ?>"/><br/>
 
             Data de inicio:<Br/>
             <input type="date" name="data_inicio"  value="<?php echo ($row["data_inicio"]) ?>"/><br/>
@@ -40,8 +40,10 @@
             
             Status:<br />  
             <select name="status" id="status">
-                <option value="ativo">Ativo</option>
-                <option value="inativo">Inativo</option>
+                <option value="reservado">Reservado</option>
+                <option value="'cancelado">'Cancelado</option>
+                <option value="'check-in">'Check-in</option>
+                <option value="'finalizado">'Finalizado</option>
             </select>
             
             <br><br>

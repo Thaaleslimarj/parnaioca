@@ -83,3 +83,5 @@ include '../../config/conn.php';
     $conn->close();  
     }  
 ?>
+
+<p><a href="javascript:history.go(-1)">Voltar para a página anterior</a></p>

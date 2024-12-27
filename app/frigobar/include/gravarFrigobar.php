@@ -64,4 +64,4 @@ if ($conn->query($sql) === TRUE) {
 <br>
 
 
-<p><a href="javascript:history.go(-1)">Voltar para a página anterior</a></p>
+<a href="../../frigobar/">Página inicial</a>

@@ -43,4 +43,4 @@ include '../config/conn.php'
 </body>  
 </html>
 
-<a href="../index.php">Paginal inicial</a>
+<a href="../cliente/">Paginal inicial</a>

@@ -7,7 +7,7 @@ include '../app/config/conn.php';
 if (!empty($_POST['login']) && !empty($_POST['senha'])) {  
     // Armazena os dados de login e senha enviados via POST  
     $login = $_POST['login'];  
-    $senha = $_POST['senha'];  
+    $senha = md5($_POST['senha']);    
 
     // Usa consultas preparadas para prevenir SQL Injection  
     $sql = "SELECT * FROM funcionario WHERE login = ?";  
@@ -28,7 +28,7 @@ if (!empty($_POST['login']) && !empty($_POST['senha'])) {
     $senhaBanco = $array['senha'];  
 
     // Verifica se a senha fornecida corresponde à senha do banco de dados  
-    if (password_verify($senha, $senhaBanco)) {  
+    if ($senhaBanco = $senha) {  
         // Inicializa a sessão e armazena o login do usuário  
         session_start();  
         $_SESSION['usuario_logado'] = $array['login'];  

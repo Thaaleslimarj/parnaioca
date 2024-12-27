@@ -67,6 +67,6 @@ include '../config/conn.php';
     </form>  
     
     <br><br>
-    <a href="../index.php">Página inicial</a>  
+    <a href="../reserva/">Página inicial</a>  
 </body>  
 </html>

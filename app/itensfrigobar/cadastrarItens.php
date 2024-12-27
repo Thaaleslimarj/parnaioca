@@ -55,4 +55,4 @@ include '../config/conn.php';
 </body>  
 </html>  
 
-<br><a href="../index.php">Página inicial</a>
+<br><a href="../frigobar/">Página inicial</a>

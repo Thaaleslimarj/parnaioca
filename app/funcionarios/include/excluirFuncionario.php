@@ -14,4 +14,4 @@ include_once '../../config/conn.php';
 ?>
 
 <br/>
-<p><a href="javascript:history.go(-1)">Voltar para a página anterior</a></p>
+<a href="../../funcionarios/">Página inicial</a>

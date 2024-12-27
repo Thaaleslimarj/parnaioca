@@ -39,4 +39,4 @@ include '../config/conn.php';
 </html>
 
 
-<br><a href="../index.php">Paginal inicial</a>
+<br><a href="../acomodacoes/">Paginal inicial</a>

@@ -27,7 +27,7 @@
             <input type="text" name="nome" value="<?php echo $row["nome"] ?>"/><br/>
 
             Acomodação:<Br/>
-            <input type="text" name="acomodacao" value="<?php echo $row["acomodacao"] ?>"/><br/>
+            <input type="number" name="acomodacao" max="13" value="<?php echo $row["acomodacao"] ?>"/><br/>
 
             Placa:<Br/>
             <input type="text" name="placa"  value="<?php echo ($row["placa"]) ?>"/><br/>
@@ -38,7 +38,7 @@
                 <option value="inativo">Inativo</option>
             </select>
             
-            <input type="submit" value="Enviar" />
+            <br><br><input type="submit" value="Enviar" />
 
         </form>        
 
@@ -46,4 +46,4 @@
 </html>
 
 <br/>
-<a href="index.php">Página inicial</a>
+<a href="../estacionamento/">Página inicial</a>

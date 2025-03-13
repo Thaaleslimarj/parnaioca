@@ -24,4 +24,4 @@ mysqli_close($conn);
 ?>
 
 <br/>
-<a href="/app/index.php">Página inicial</a
+<a href="/app/estacionamento/">Página inicial</a

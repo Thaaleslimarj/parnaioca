@@ -30,7 +30,7 @@
             <input type="text" name="login" value="<?php echo $row["login"] ?>"/><br/>
 
             senha:<Br/>
-            <input type="text" name="senha"  value="<?php echo ($row["senha"]) ?>"/><br/>
+            <input type="password" name="senha"  value="<?php echo ($row["senha"]) ?>"/><br/>
                 
                 Tipo: <br>
             <select name="tipo" id="tipo">

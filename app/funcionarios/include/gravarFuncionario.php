@@ -14,7 +14,7 @@ $tipo = mysqli_real_escape_string($conn, $_POST['tipo']);
 $status = mysqli_real_escape_string($conn, $_POST['status']);  
 
 // Hash da senha  
-$senhaHash = password_hash($senha, PASSWORD_DEFAULT);  
+$senhaHash = md5($senha);  
 
 // SQL para inserir os dados no banco  
 $sql = "INSERT INTO funcionario (nome, login, senha, tipo, status) VALUES ('$nome', '$login', '$senhaHash', '$tipo', '$status')"; 

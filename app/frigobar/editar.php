@@ -49,4 +49,4 @@
 </html>
 
 <br/>
-<a href="index.php">Página Inicial</a>
+<a href="../frigobar/">Página Inicial</a>

@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $msg = "";  
 
     // Validação do cliente  
-    if (!$nome) {  
+    if (!$cliente) {  
         $erro = 1;  
         $msg .= "O campo cliente é obrigatório.<br>";  
     }  
@@ -63,23 +63,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
      {  
 
-        // Exemplo de inserção no banco de dados  
-        $sql = "INSERT INTO frigobar (id, cliente, cpf, acomodacao, entrada, saida, numero, quantidade)   
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";  
-        $stmt = mysqli_prepare($conn, $sql);  
-        mysqli_stmt_bind_param($stmt, "issssssis", $id, $cliente, $cpf, $acomodacao, $entrada, $saida, $numero, $quantidade);  
+        // Verifica se após as validações o marcador continua zero (sem erros)  
+    if($erro == 0) {  
+        // Criação da query para inserir os dados  
+        $sql = "INSERT INTO reserva (id_acomodacao, id_cliente, data_inicio, data_final, qtdhospede, status)  
+                VALUES ('$acomodacao', '$cliente', '$entrada', '$saida', '$quantidade', 'status')";
 
-        if (mysqli_stmt_execute($stmt)) {  
-            echo "<p style='color:green;'>Check-in realizado com sucesso!</p>";  
+        if ($conn->query($sql) === TRUE) {  
+            echo "Reserva realizada com sucesso!";  
         } else {  
-            echo "<p style='color:red;'>Erro ao realizar o check-in: " . mysqli_error($conn) . "</p>";  
+            echo "Erro ao realizar a reserva: " . $conn->error;  
         }  
+    } else {  
+        echo $msg; // Exibe as mensagens de erro  
+    }  
 
-        // Fechar a declaração e a conexão  
-        mysqli_stmt_close($stmt);  
+    // Fecha a conexão  
+    $conn->close();  
+ 
     }  
 }  
-
-// Fechar a conexão  
-mysqli_close($conn);  
+ 
 ?>
+
+<p><a href="javascript:history.go(-1)">Voltar para a página anterior</a></p>

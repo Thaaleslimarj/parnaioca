@@ -66,8 +66,9 @@ include '../config/conn.php';
                             <th>estado</th>
                             <th>cidade</th>
                             <th>status</th>
-                       </tr>";
-            // enquanto houverem resultados o codigo continuara buscando informações;;    
+                            
+                            </tr>";
+                            // enquanto houverem resultados o codigo continuara buscando informações;;    
             while ($row = mysqli_fetch_array($result)) {
                 ?>
                 <!-- //echo <tr><td> - informações do banco. escrita exatamente igual ao do Banco de dados -->

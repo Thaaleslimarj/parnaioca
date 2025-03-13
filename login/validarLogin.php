@@ -34,7 +34,7 @@ if (!empty($_POST['login']) && !empty($_POST['senha'])) {
         $_SESSION['usuario_logado'] = $array['login'];  
 
         // Se as credenciais estiverem corretas, redireciona para a página de funcionários  
-        header('location: ../../app/index.php');  
+        header('location: ../app/index.php');  
         exit();  
     } else {  
         // Redireciona para a página de login com mensagem de erro  

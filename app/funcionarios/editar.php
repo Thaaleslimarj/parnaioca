@@ -16,7 +16,7 @@
         $row = mysqli_fetch_array($result);
         ?>
                 
-        <h3>Editar funcionário</h3>
+        <h3>Editar Funcionário</h3>
 
         <form action="include/atualizarFuncionario.php" method="post">            
 

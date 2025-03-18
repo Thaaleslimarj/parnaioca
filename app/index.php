@@ -15,11 +15,15 @@ session_start();
             background-size: cover;  
             color: #333;  
             margin: 0;  
-            padding: 20px;  
+            display: flex;  
+            flex-direction: column; /* Organiza os filhos em coluna */  
+            height: 100vh; /* Ocupa toda a altura da janela */  
+        }  
+        .content {  
+            flex: 1; /* Faz o contêiner crescer para ocupar o espaço disponível */  
             display: flex;  
             justify-content: center; /* Centraliza horizontalmente */  
             align-items: center; /* Centraliza verticalmente */  
-            height: 100vh; /* Ocupa toda a altura da janela */  
         }  
         h1 {  
             color: #2E8BC0; /* Azul suave */  
@@ -49,31 +53,34 @@ session_start();
             background-color: #45a049; /* Verde mais escuro para hover */  
         }  
         footer {  
-            margin-top: 20px;  
-            color: #2E8BC0; /* Azul suave */  
+            text-align: center; /* Centraliza o texto do rodapé */  
+            padding: 10px;  
+            background-color: rgba(255, 255, 255, 0.7); /* Fundo claro para o rodapé */  
+            color: rgb(4, 13, 19); /* Cor do texto do rodapé */  
         }  
     </style>  
 </head>  
 <body>  
 
-<div class="container">  
-    <h1>Bem-vindo(a) à Parnaioca LTDA!</h1>  
+<div class="content">  
+    <div class="container">  
+        <h3>Bem-vindo ao Parnaioca:</h3>  
 
-    <a href="./funcionarios/index.php" class="button">Consultar Funcionários</a>  
-    <a href="./cliente/index.php" class="button">Consultar Clientes</a>  
-    <a href="./acomodacoes/index.php" class="button">Acomodações</a>  
-    <a href="./frigobar/index.php" class="button">Frigobar</a>  
-    <a href="./estacionamento/index.php" class="button">Estacionamento</a>  
-    <a href="./reserva/index.php" class="button">Reservas</a>  
+        <a href="./funcionarios/index.php" class="button">Consultar Funcionários</a>  
+        <a href="./tipo_funcionario/index.php" class="button">Consultar Tipo de Funcionários</a>  
+        <a href="./cliente/index.php" class="button">Consultar Clientes</a>  
+        <a href="./acomodacoes/index.php" class="button">Acomodações</a>  
+        <a href="./frigobar/index.php" class="button">Frigobar</a>  
+        <a href="./estacionamento/index.php" class="button">Estacionamento</a>  
+        <a href="./reserva/index.php" class="button">Reservas</a>  
 
-    <!-- Botão de Sair -->  
-    <a href="../app/arquivo_de_login/logout.php" class="button">Encerrar Sessão</a>  
+        <a href="../app/arquivo_de_login/logout.php" class="button">Encerrar Sessão</a>  
+    </div>  
 </div>  
 
 <footer>  
-    <h4>&copy; Parnaioca LTDA</h4>  
+    <h4>&copy; Thales LTDA</h4>  
 </footer>  
 
 </body>  
 </html>  
-
